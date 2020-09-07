@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update]
   
-  def index
+    def index
+      raise StandardError
       @articles = Article.all
     end
 
