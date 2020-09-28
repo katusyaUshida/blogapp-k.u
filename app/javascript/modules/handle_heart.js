@@ -3,7 +3,7 @@ import axios from 'modules/axios'
 
 const listenInactiveHeartEvent = (articleId) => {
   $('.inactive-heart').on('click', () => {
-    axios.post(`/articles/${articleId}/like`)
+    axios.post(`/api/articles/${articleId}/like`)
     .then((response) => {
         $('.active-heart').removeClass('hidden')
         $('.inactive-heart').addClass('hidden')
@@ -17,7 +17,7 @@ const listenInactiveHeartEvent = (articleId) => {
 
 const listenActiveHeartEvent = (articleId) => {
     $('.active-heart').on('click', () => {
-        axios.delete(`/articles/${articleId}/like`)
+        axios.delete(`/api/articles/${articleId}/like`)
         .then((response) => {
             $('.active-heart').addClass('hidden')
             $('.inactive-heart').removeClass('hidden')
